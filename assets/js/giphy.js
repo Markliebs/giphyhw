@@ -28,7 +28,7 @@
 	// ========================================================
 
 	// This function handles events where one button is clicked
-	$('#addGif').on('click', function(){
+	$('#addButton').on('click', function(){
 
 		// This line of code will grab the input from the textbox
 		var animal = $('#gif-input').val().trim();

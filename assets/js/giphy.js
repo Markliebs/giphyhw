@@ -1,4 +1,4 @@
-// Initial array of movies
+// Initial array of animals
 	var animals = ['Giraffe', 'Spider Monkey', 'Dog', 'Cat'];
 
 	// ========================================================

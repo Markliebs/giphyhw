@@ -17,9 +17,11 @@
 			// Note the jQUery syntax here... 
 		    var a = $('<button>') // This code $('<button>') is all jQuery needs to create the beginning and end tag. (<button></button>)
 		    a.addClass('animal'); // Added a class 
+			a.addClass('btn btn-primary btn-xs');
 		    a.attr('data-name', animals[i]); // Added a data-attribute
 		    a.text(animals[i]); // Provided the initial button text
 		    $('#gifView').append(a); // Added the button to the HTML
+			
 		}
 	}
 

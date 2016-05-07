@@ -7,7 +7,7 @@
 	function renderButtons(){ 
 
 		// Deletes the movies prior to adding new movies (this is necessary otherwise you will have repeat buttons)
-		$('#gifView').empty();
+		$('#animalButtons').empty();
 
 		// Loops through the array of movies
 		for (var i = 0; i < animals.length; i++){
@@ -20,7 +20,7 @@
 			a.addClass('btn btn-primary btn-xs');
 		    a.attr('data-name', animals[i]); // Added a data-attribute
 		    a.text(animals[i]); // Provided the initial button text
-		    $('#gifView').append(a); // Added the button to the HTML
+		    $('#animalButtons').append(a); // Added the button to the HTML
 			
 		}
 	}

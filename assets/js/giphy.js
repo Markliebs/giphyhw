@@ -3,19 +3,18 @@ var animals = ['Giraffe', 'Spider Monkey', 'Dog', 'Cat'];
 
 // ========================================================
 
-// Generic function for displaying movie data 
+// Generic function for displaying animal data 
 function renderButtons() {
 
-	// Deletes the movies prior to adding new movies (this is necessary otherwise you will have repeat buttons)
+	// Deletes the movies prior to adding new animals (this is necessary otherwise you will have repeat buttons)
 	$('#animalButtons').empty();
 
 	// Loops through the array of movies
 	for (var i = 0; i < animals.length; i++) {
 
-		// Then dynamicaly generates buttons for each movie in the array
+		// Then dynamicaly generates buttons for each animal in the array
 
-		// Note the jQUery syntax here... 
-		var a = $('<button>') // This code $('<button>') is all jQuery needs to create the beginning and end tag. (<button></button>)
+		var a = $('<button>'); // This code $('<button>') is all jQuery needs to create the beginning and end tag. (<button></button>)
 		a.addClass('animal'); // Added a class 
 		a.addClass('btn btn-primary btn-xs');
 		a.attr('data-name', animals[i]); // Added a data-attribute
@@ -33,15 +32,15 @@ $('#addButton').on('click', function () {
 	// This line of code will grab the input from the textbox
 	var animal = $('#gif-input').val().trim();
 
-	// The movie from the textbox is then added to our array
+	// The animal from the textbox is then added to our array
 	animals.push(animal);
 
-	// Our array then runs which handles the processing of our movie array
+	// Our array then runs which handles the processing of our animal array
 	renderButtons();
 
 	// We have this line so that users can hit "enter" instead of clicking on ht button and it won't move to the next page
 	return false;
-})
+});
 
 // ========================================================
 
@@ -51,7 +50,7 @@ renderButtons();
 	// The next section performs the search and returns the GIFs
 	
 	 $('button').on('click', function() {
-        var animal = $(this).data('animal');
+        var animal = $(this).data('name');
         var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + animal + "&api_key=dc6zaTOxFJmzC&limit=10";
 
         $.ajax({
@@ -62,7 +61,7 @@ renderButtons();
 
                 console.log(queryURL);
 
-                console.log(response)
+                console.log(response);
          
                 var results = response.data;
 

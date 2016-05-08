@@ -1,5 +1,7 @@
+$(document).ready(function () {
+
 // Initial array of animals
-var animals = ['Giraffe', 'Spider Monkey', 'Dog', 'Cat'];
+var animals = ['Giraffe', 'Elephant', 'Dog', 'Cat'];
 
 // ========================================================
 
@@ -47,39 +49,41 @@ $('#addButton').on('click', function () {
 // This calls the renderButtons() function
 renderButtons();
 
-	// The next section performs the search and returns the GIFs
-	
-	 $('button').on('click', function() {
-        var animal = $(this).data('name');
-        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + animal + "&api_key=dc6zaTOxFJmzC&limit=10";
+// The next section performs the search and returns the GIFs
 
-        $.ajax({
-                url: queryURL,
-                method: 'GET'
-            })
-            .done(function(response) {
+$('button').on('click', function () {
+	var animal = $(this).data('name');
+	var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + animal + "&api_key=dc6zaTOxFJmzC&limit=10";
 
-                console.log(queryURL);
+	$.ajax({
+		url: queryURL,
+		method: 'GET'
+	})
+		.done(function (response) {
 
-                console.log(response);
-         
-                var results = response.data;
+			console.log(queryURL);
 
-                for (var i = 0; i < results.length; i++) {
-               
-                    var animalDiv = $('<div>');
+			console.log(response);
 
-                    var p = $('<p>').text("Rating: " + results[i].rating);
+			var results = response.data;
+$('#gifView').empty();
+			for (var i = 0; i < results.length; i++) {
+				
+				
+				var animalDiv = $('<div>');
 
-                    var animalImage = $('<img>');
-                    animalImage.attr('src', results[i].images.fixed_height.url);
+				var p = $('<p>').text("Rating: " + results[i].rating);
 
-                    animalDiv.append(p);
-                    animalDiv.append(animalImage);
+				var animalImage = $('<img>');
+				animalImage.attr('src', results[i].images.fixed_height.url);
 
-                    $('#gifView').append(animalDiv);
-                    //--------------------------------
-                }
+				animalDiv.prepend(p);
+				animalDiv.prepend(animalImage);
 
-            });
-    });
+				$('#gifView').prepend(animalDiv);
+				//--------------------------------
+			}
+
+		});
+});
+});

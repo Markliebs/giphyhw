@@ -1,11 +1,10 @@
 $(document).ready(function () {
 
 	// Initial array of animals
+
 	var animals = ['Giraffe', 'Elephant', 'Dog', 'Cat'];
 
-	// ========================================================
-
-	// Generic function for displaying animal data 
+	// Function for displaying animal data 
 	function renderButtons() {
 
 		// Deletes the movies prior to adding new animals (this is necessary otherwise you will have repeat buttons)
@@ -14,7 +13,7 @@ $(document).ready(function () {
 		// Loops through the array of movies
 		for (var i = 0; i < animals.length; i++) {
 
-			// Then dynamicaly generates buttons for each animal in the array
+			// Dynamicaly generates buttons for each animal in the array
 
 			var a = $('<button>'); // This code $('<button>') is all jQuery needs to create the beginning and end tag. (<button></button>)
 			a.addClass('animal'); // Added a class 
@@ -28,14 +27,11 @@ $(document).ready(function () {
 		}
 	}
 
-	// ========================================================
-
 	// This function handles events where one button is clicked
 	$('#addButton').on('click', function () {
 
 		// This line of code will grab the input from the textbox
 		var animal = $('#gif-input').val().trim();
-
 
 		// The animal from the textbox is then added to our array
 		animals.push(animal);
@@ -47,12 +43,11 @@ $(document).ready(function () {
 		return false;
 	});
 
-	// ========================================================
-
 	// This calls the renderButtons() function
 	renderButtons();
 
 	// The next section performs the search and returns the GIFs
+
 	$(document).on('click', '.animal', function () {
 		// $('button').on('click', function () {
 		var animal = $(this).data('name');
@@ -85,30 +80,26 @@ $(document).ready(function () {
 					animalDiv.prepend(animalImage);
 
 					$('#gifView').prepend(animalDiv);
-					//--------------------------------
+
 				}
 
-// The next section should allow for pausing and unpausing of the GIFs
+				// The next section should allow for pausing and unpausing of the GIFs
 
 
-	$(document).on('click', '.animal', function () {
+				$(document).on('click', '.animal', function () {
 
-		var state = $(this).attr('data-state');
+					var state = $(this).attr('data-state');
 
-		if (state == 'animate') {
-			$(this).attr('src', $(this).data('still'));
-			$(this).attr('data-state', 'still');
-		} else {
-			$(this).attr('src', $(this).data('animate'));
-			$(this).attr('data-state', 'animate');
-		}
+					if (state == 'animate') {
+						$(this).attr('src', $(this).data('still'));
+						$(this).attr('data-state', 'still');
+					} else {
+						$(this).attr('src', $(this).data('animate'));
+						$(this).attr('data-state', 'animate');
+					}
 
-
-
-	});
-
-
+				});
 			});
 	});
-	
-	});
+
+});

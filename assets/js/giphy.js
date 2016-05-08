@@ -88,16 +88,17 @@ $(document).ready(function () {
 
 				$(document).on('click', '.animal', function () {
 
-					var state = $(this).attr('data-state');
+					$(this).attr('data-state');
+					var animate = $(this).attr('data-animate');
+					var still = $(this).attr('data-still');
 
-					if (state == 'animate') {
-						$(this).attr('src', $(this).data('still'));
-						$(this).attr('data-state', 'still');
-					} else {
-						$(this).attr('src', $(this).data('animate'));
+					if (state == 'still') {
+						$(this).attr('src', animate);
 						$(this).attr('data-state', 'animate');
+					} else {
+						$(this).attr('src', still);
+						$(this).attr('data-state', 'still');
 					}
-
 				});
 			});
 	});

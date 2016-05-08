@@ -88,9 +88,7 @@ $(document).ready(function () {
 					//--------------------------------
 				}
 
-			});
-	});
-	// The next section should allow for pausing and unpausing of the GIFs
+// The next section should allow for pausing and unpausing of the GIFs
 
 
 	$(document).on('click', '.animal', function () {
@@ -108,4 +106,9 @@ $(document).ready(function () {
 
 
 	});
+
+
+			});
+	});
+	
 	});

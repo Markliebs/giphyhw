@@ -51,8 +51,8 @@ $(document).ready(function () {
 	renderButtons();
 
 	// The next section performs the search and returns the GIFs
-
-	$('button').on('click', function () {
+	$(document).on('click', '.animal', function () {
+	// $('button').on('click', function () {
 		var animal = $(this).data('name');
 		var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + animal + "&api_key=dc6zaTOxFJmzC&limit=10";
 
@@ -89,7 +89,36 @@ $(document).ready(function () {
 	// The next section should allow for pausing and unpausing of the GIFs
 	
 	
-	
+	// $('.animalImage').on('click', function(){
+	//     	//STEP ONE: study the html above. Look at all the data attributes. Run the file in the browser. Look at the images. After you fill in steps 1 and 2 you'll be able to pause gifs from giphy.
+
+	//     	//STEP TWO: make a variable named state and then reference the button's data-state into it. Do not use .data('state'). It won't work the way we expect.
+
+	//     	//---------------FILL IN CODE HERE FOR STEP TWO----------------------------
+	//         var state = $(this).attr('data-state'); 
+	//         //----------------------------------------------------
+
+    //     	/*STEP THREE: 
+    //     		* if variable state is equal to 'still' then 
+    //     			* update the src attribute of this image that you clicked on to what data-animate is equal to for this image
+    //     			* and update the data-state attribute to 'animate'
+    //     		* if state does not equal 'still' then 
+    //     			* update the src attribute of this image that you clicked on to what data-still is equal to for this image
+    //     			* and update the data-state attribute to 'still'
+	// 		*/
+
+    //     	//---------------FILL IN CODE HERE FOR STEP THREE----------------------------
+    //         if ( state == 'still'){
+    //             $(this).attr('src', $(this).data('animate'));
+    //             $(this).attr('data-state', 'animate');
+    //         }else{
+    //             $(this).attr('src', $(this).data('still'));
+    //             $(this).attr('data-state', 'still');
+    //         }
+    //         //----------------------------------------------------
+
+    //         //STEP FOUR: open the file in the browser and click on the images. Then click again to pause.
+	//     });
 	
 	
 	

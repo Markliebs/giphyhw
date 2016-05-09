@@ -74,8 +74,14 @@ $(document).ready(function () {
 					var p = $('<p>').text("Rating: " + results[i].rating);
 
 					var animalImage = $('<img>');
-					animalImage.attr('src', results[i].images.fixed_height.url);
-
+					// animalImage.attr('src', results[i].images.fixed_height.url);
+					animalImage.attr('src', results[i].images.fixed_height_still.url);
+					animalImage.attr('data-still', results[i].images.fixed_height_still.url);
+                    animalImage.attr('data-animate', results[i].images.fixed_height.url);
+                    animalImage.attr('data-state', 'still');
+					animalImage.addClass('animalGif');
+					animalDiv.append(p);
+					animalDiv.append(animalImage);
 					animalDiv.prepend(p);
 					animalDiv.prepend(animalImage);
 
@@ -86,9 +92,9 @@ $(document).ready(function () {
 				// The next section should allow for pausing and unpausing of the GIFs
 
 
-				$(document).on('click', '.animal', function () {
+				$('#gifView').on('click', '.animalGif', function () {
 
-					$(this).attr('data-state');
+					var state = $(this).attr('data-state');
 					var animate = $(this).attr('data-animate');
 					var still = $(this).attr('data-still');
 

@@ -9,3 +9,11 @@ body {
 .animal {
     margin-right: 5px;
 }
+.gifView{
+     float:left;
+     overflow:wrap;
+}
+p{
+    float:left;
+    overflow:wrap;
+}

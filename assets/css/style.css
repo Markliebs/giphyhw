@@ -10,24 +10,10 @@ body {
     margin-right: 5px;
 }
 
-/*.gifView {
-    float: left;
-    overflow: wrap;
-    display: block;
-    margin-left: 15px;
-    vertical-align: top;
-}*/
-
-p {
-    display: inline-block;
-    /*float:left;*/
-    overflow:wrap;
-    vertical-align: top;
-}
-
 .gifDisplay {
     /*float: left;*/
-    display: inline-block;
+    display: inline-table;
     vertical-align: top;
-    margin left: 5px;
+    /*margin top: 10px;*/
+    padding-right: 10px;
 }

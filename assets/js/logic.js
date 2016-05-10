@@ -37,7 +37,6 @@ $(document).ready(function () {
 	// The next section performs the search and returns the GIFs
 
 	$(document).on('click', '.animal', function () {
-		// $('button').on('click', function () {
 		var animal = $(this).data('name');
 		var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + animal + "&api_key=dc6zaTOxFJmzC&limit=10";
 
@@ -59,7 +58,7 @@ $(document).ready(function () {
 
 					var animalDiv = $('<div class="gifDisplay">');
 
-					var p = $('<p>').text("Rating: " + results[i].rating);
+					var p = $('<h5>').text("Rating: " + results[i].rating);
 
 					var animalImage = $('<img>');
 

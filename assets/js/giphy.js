@@ -57,7 +57,7 @@ $(document).ready(function () {
 
 				for (var i = 0; i < results.length; i++) {
 
-					var animalDiv = $('<div class="row">');
+					var animalDiv = $('<div class="gifDisplay">');
 
 					var p = $('<p>').text("Rating: " + results[i].rating);
 

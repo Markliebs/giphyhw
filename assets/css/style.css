@@ -11,9 +11,7 @@ body {
 }
 
 .gifDisplay {
-    /*float: left;*/
     display: inline-table;
     vertical-align: top;
-    /*margin top: 10px;*/
     padding-right: 10px;
 }

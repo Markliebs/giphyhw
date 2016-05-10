@@ -2,18 +2,28 @@ body {
     height: 768px;
     width: 1024px;
     background-image: url("../images/diego30.jpg");
-    background-size: cover;
+    background-size: 100%;;
     background-repeat: no-repeat;
 }
 
 .animal {
     margin-right: 5px;
 }
-/*.gifView{
-     float:left;
-     overflow:wrap;
+
+.gifView {
+    /*float: left;*/
+    overflow: wrap;
+    display: block;
+    margin-left: 15px;
+    vertical-align: top;
 }
-p{
-    float:left;
-    overflow:wrap;*/
+
+p {
+    /*float:left;*/
+    overflow:wrap;
+    vertical-align: top;
+}
+
+.row {
+    display: block;
 }

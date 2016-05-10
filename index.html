@@ -12,36 +12,39 @@
 
 <body>
     <div class="container">
-        
-        <h1>GIF Search</h1>
-        <h4>Powered by giphy.com</h4>
-        <h4>Click each GIF to start or stop the animation</h4>
-
-        <!--<div class="backImg">  
-        </div>-->
-
-        <div id="animalButtons">
-            <!--Buttons will be dumped here-->
+        <div class="row">
+            <div class="col-lg-12">
+                <strong>
+                    <h1>GIF Search</h1>
+                <h4>Powered by giphy.com</h4>
+                <h4>Click each GIF to start or stop the animation</h4>
+                </strong>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div id="animalButtons">
+                    <!--Buttons will be dumped here-->
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-lg-12">
+                <form id="gif-form">
+                    <label for="gif-input"><a href="#" class="btn btn-primary" input id="addButton">Submit Your Animal Button</a></label>
+                    <input type="text" id="gif-input">
+                    <br>
+            </div>
         </div>
 
-        
-        <br>
-
-        <form id="gif-form">
-
-            <label for="gif-input"><a href="#" class="btn btn-primary" input id="addButton">Submit Your Animal Button</a></label>
-            <input type="text" id="gif-input">
-
-            <br>
-
-            <!-- Button triggers new animal to be added -->
-            <!--<a href="#" class="btn btn-primary" input id="addButton">Submit Your Animal</a>-->
-            <!--<input id="addButton" type="submit" value="Submit Animal">-->
-        </form>
-        
         <!-- GIFs will get dumped here -->
-        <div id="gifView">
-<h3>Click an animal button above to search</h3>
+        <div class="row">
+            <div class="col-lg-12">
+                <div id="gifView">
+                    <h3>Click an animal button above to search</h3>
+                </div>
+            </div>
         </div>
 
         <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>

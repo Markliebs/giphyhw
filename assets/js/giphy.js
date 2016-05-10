@@ -1,49 +1,37 @@
 $(document).ready(function () {
 
-	// Initial array of animals
-
 	var animals = ['Giraffe', 'Elephant', 'Dog', 'Cat'];
 
-	// Function for displaying animal data 
 	function renderButtons() {
 
-		// Deletes the movies prior to adding new animals (this is necessary otherwise you will have repeat buttons)
 		$('#animalButtons').empty();
 
-		// Loops through the array of movies
 		for (var i = 0; i < animals.length; i++) {
 
-			// Dynamicaly generates buttons for each animal in the array
-
-			var a = $('<button>'); // This code $('<button>') is all jQuery needs to create the beginning and end tag. (<button></button>)
-			a.addClass('animal'); // Added a class 
+			var a = $('<button>');
+			a.addClass('animal');
 			a.addClass('btn btn-primary btn-xs');
-			a.attr('data-name', animals[i]); // Added a data-attribute
+			a.attr('data-name', animals[i]);
 			a.attr('src', $(this).data('animate'));
 			a.attr('data-state'), $(this).attr('data-state', 'animate');
-			a.text(animals[i]); // Provided the initial button text
-			$('#animalButtons').append(a); // Added the button to the HTML
+			a.text(animals[i]);
+			$('#animalButtons').append(a);
 
 		}
 	}
 
-	// This function handles events where one button is clicked
 	$('#addButton').on('click', function () {
 
-		// This line of code will grab the input from the textbox
+
 		var animal = $('#gif-input').val().trim();
 
-		// The animal from the textbox is then added to our array
 		animals.push(animal);
 
-		// Our array then runs which handles the processing of our animal array
 		renderButtons();
 
-		// We have this line so that users can hit "enter" instead of clicking on ht button and it won't move to the next page
 		return false;
 	});
 
-	// This calls the renderButtons() function
 	renderButtons();
 
 	// The next section performs the search and returns the GIFs
@@ -69,12 +57,12 @@ $(document).ready(function () {
 
 				for (var i = 0; i < results.length; i++) {
 
-					var animalDiv = $('<div>');
+					var animalDiv = $('<div class="row">');
 
 					var p = $('<p>').text("Rating: " + results[i].rating);
 
 					var animalImage = $('<img>');
-					// animalImage.attr('src', results[i].images.fixed_height.url);
+
 					animalImage.attr('src', results[i].images.fixed_height_still.url);
 					animalImage.attr('data-still', results[i].images.fixed_height_still.url);
                     animalImage.attr('data-animate', results[i].images.fixed_height.url);
@@ -90,7 +78,6 @@ $(document).ready(function () {
 				}
 
 				// The next section should allow for pausing and unpausing of the GIFs
-
 
 				$('#gifView').on('click', '.animalGif', function () {
 
@@ -108,5 +95,4 @@ $(document).ready(function () {
 				});
 			});
 	});
-
 });

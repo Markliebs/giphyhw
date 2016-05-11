@@ -32,8 +32,8 @@ $(document).ready(function () {
 		return false;
 	});
 
-	// $('#addButton').on('submit', function () {
-		$("#addButton").submit(function (event) {
+	$('#addButton').on('submit', function () {
+		// $("#addButton").submit(function (event) {
 
 			var animal = $('#gif-input').val().trim();
 
